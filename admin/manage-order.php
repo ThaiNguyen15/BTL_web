@@ -1,52 +1,52 @@
-<?php include('partials/menu.php') ?>
+<?php 
+include('partials/menu.php');
+?>
 
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Order</h1> 
-        
-        <br>
-        <br> <br>
+        <br>              
                 <table class="tbl-full">
                     <tr>
-                        <th>S.N.</th>
-                        <th>Full Name</th>
-                        <th>Username</th>
-                        <th>Actions</th>
-
+                        <th>Customer</th>
+                        <th>BookID</th>
+                        <th>Book Name</th>
+                        <th>Time</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
                     </tr>
-
-                    <tr>
-                        <td>1.</td>
-                        <td>Ng Hong My</td>
-                        <td>hongmynguyen</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a> 
-                            <a href="#" class="btn-danger">Delete Admin</a> 
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td>Ng Xuan Dieu</td>
-                        <td>ngxuandieu</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a> 
-                            <a href="#" class="btn-danger">Delete Admin</a> 
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>3.</td>
-                        <td>Ng Duc Thai</td>
-                        <td>thainguyenduc</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a> 
-                            <a href="#" class="btn-danger">Delete Admin</a> 
-                        </td>
-
-                    </tr>
+                    <?php 
+                        $query1 = mysqli_query($conn,"SELECT DISTINCT CustomerID FROM `order`");
+                        while($cus_order = mysqli_fetch_array($query1)){
+                            $query2 = mysqli_query($conn, "SELECT * FROM `order` WHERE CustomerID = {$cus_order['CustomerID']}");
+                            $query3 = mysqli_query($conn,"SELECT * FROM `customer` WHERE CustomerID = {$cus_order['CustomerID']}");
+                            $cus_name = mysqli_fetch_array($query3);
+                            $count = 0;
+                            while($order = mysqli_fetch_array($query2)){
+                                $query4 = mysqli_query($conn,"SELECT * FROM `book` WHERE BookID = '{$order['BookID']}'");
+                                $book = mysqli_fetch_array($query4);
+                    ?>      
+                                <tr>
+                                    <td>
+                                        <?php if($count ==0)
+                                            echo $cus_name["CustomerName"]; 
+                                        ?>
+                                    </td>
+                                    <td><?php echo $order["BookID"]; ?></td>
+                                    <td><?php echo $book["BookTitle"]; ?></td>
+                                    <td><?php echo $order["DatePurchase"]; ?></td>
+                                    <td><?php echo $order["Quantity"]; ?></td>
+                                    <td><?php echo $book["Price"]; ?></td>
+                                    <td><?php echo $order["TotalPrice"]; ?></td>
+                                </tr>
+                                <?php $count = 1; ?>
+                            <?php } ?>
+                            <th></th>
+                        <?php } ?>
+                        
+                    
                 </table>
     </div>
 </div>
-
 <?php include('partials/footer.php') ?>
