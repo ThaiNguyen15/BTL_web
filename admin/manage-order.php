@@ -13,8 +13,8 @@ include('partials/menu.php');
                         <th>Book Name</th>
                         <th>Time</th>
                         <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
+                        <th>Price($)</th>
+                        <th>Total($)</th>
                     </tr>
                     <?php 
                         $query1 = mysqli_query($conn,"SELECT DISTINCT CustomerID FROM `order`");

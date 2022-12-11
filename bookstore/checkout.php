@@ -1,5 +1,6 @@
 <html>
 <body style="font-family:Arial; margin: 0 auto; background-color: #f2f2f2;">
+<title>Checkout</title>
 <header>
 <blockquote>
 	<img src="image/logo.png">
@@ -74,12 +75,12 @@ if(isset($_SESSION['id'])){
 	while($row = $result->fetch_assoc()){
 		echo "<tr><td style='border-top: 2px solid #ccc;'>";
 		echo '<img src="'.$row["Image"].'"width="20%"></td><td style="border-top: 2px solid #ccc;">';
-    	echo $row['BookTitle']."<br>RM".$row['Price']."<br>";
+    	echo $row['BookTitle']."<br>$".$row['Price']."<br>";
     	echo "Quantity: ".$row['Quantity']."<br>";
     	echo "</td></tr>";
     	$total += $row['TotalPrice'];
 	}
-	echo "<tr><td style='background-color: #ccc;'></td><td style='text-align: right;background-color: #ccc;''>Total Price: <b>RM".$total."</b></td></tr>";
+	echo "<tr><td style='background-color: #ccc;'></td><td style='text-align: right;background-color: #ccc;''>Total Price: <b>$".$total."</b></td></tr>";
 	echo "</table>";
 	echo "</div>";
 
@@ -343,12 +344,12 @@ if(isset($_POST['submitButton'])){
 	while($row = $result->fetch_assoc()){
 		echo "<tr><td style='border-top: 2px solid #ccc;'>";
 		echo '<img src="'.$row["Image"].'"width="20%"></td><td style="border-top: 2px solid #ccc;">';
-    	echo $row['BookTitle']."<br>RM".$row['Price']."<br>";
+    	echo $row['BookTitle']."<br>$".$row['Price']."<br>";
     	echo "Quantity: ".$row['Quantity']."<br>";
     	echo "</td></tr>";
     	$total += $row['TotalPrice'];
 	}
-	echo "<tr><td style='background-color: #ccc;'></td><td style='text-align: right;background-color: #ccc;'>Total Price: <b>RM".$total."</b></td></tr>";
+	echo "<tr><td style='background-color: #ccc;'></td><td style='text-align: right;background-color: #ccc;'>Total Price: <b>$".$total."</b></td></tr>";
 	echo "</table>";
 
 	$sql = "UPDATE `order` SET Status = 'y' WHERE CustomerID = ".$cID."";

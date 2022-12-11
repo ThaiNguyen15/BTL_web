@@ -115,9 +115,9 @@ echo '<blockquote>';
     while($row = $result->fetch_assoc()){
     	echo "<tr><td>";
     	echo '<img src="'.$row["Image"].'"width="20%"><br>';
-    	echo $row['BookTitle']."<br>RM".$row['Price']."<br>";
+    	echo $row['BookTitle']."<br>$".$row['Price']."<br>";
     	echo "Quantity: ".$row['Quantity']."<br>";
-    	echo "Total Price: RM".$row['TotalPrice']."</td></tr>";
+    	echo "Total Price: $".$row['TotalPrice']."</td></tr>";
     	$total += $row['TotalPrice'];
     }
     echo "<tr><td style='text-align: right;background-color: #f2f2f2;''>";

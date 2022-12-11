@@ -4,7 +4,7 @@
 ?>
 <html>
     <head>
-        <title>Food Order Website - Home Page </title>
+        <title>Book Order Website - Home Page </title>
         <style> <?php include '../css/admin.css'; ?> </style>
     </head>
 
@@ -16,7 +16,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="manage-admin.php">Admin</a></li>
                     <li><a href="manage-category.php">Category</a></li>
-                    <li><a href="manage-food.php">Books</a></li>
+                    <li><a href="manage-book.php">Books</a></li>
                     <li><a href="manage-order.php">Order</a></li>
                     <li><a href="logout.php">LogOut</a></li>
                 </ul>
