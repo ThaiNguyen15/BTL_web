@@ -47,6 +47,9 @@ if(isset($_SESSION['id'])){
 		FROM customer, book, `order`
 		WHERE `order`.`CustomerID` = customer.CustomerID AND `order`.`BookID` = book.BookID AND `order`.`Status` = 'N' AND `order`.`CustomerID` = ".$cID."";
 	$result = $conn->query($sql);
+
+	//Update Book Amounts
+
 	echo '<div class="container">';
 	echo '<blockquote>';
 ?>
