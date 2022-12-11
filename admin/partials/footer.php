@@ -1,7 +1,7 @@
 <!-- Footer Section Starts -->
-<div class="footer">
+        <div class="footer">
             <div class="wrapper">
-                <p class="text-center">2022 ALl rights reserved, Food House. Developed By - <a href="#"> Ng Duc Thai </a></p>    
+                <p class="text-center">Book Store, 2022 All rights reserved</p>    
             </div>   
         </div>
         <!-- Footer Section Ends -->

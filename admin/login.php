@@ -5,7 +5,7 @@
 </blockquote>
 <html>
     <head>
-        <title>Loin - Food Order System</title>
+        <title>Login - Admin</title>
         <style> <?php include '../css/admin.css'; ?> </style>
     </head>
 
