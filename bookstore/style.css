@@ -42,20 +42,6 @@ th {
     background-color: rgb(0,51,102);
     color: white;
 }
-table .btn{
-    background-color: #ec7115;
-    border: none;
-    text-align: center;
-    transition-duration: 0.5s; 
-    padding: 8px 30px;
-    cursor: pointer;
-    color: #fff;
-    margin-top: 5%;
-}
-table .btn:hover{
-    background-color: #e3e3e3;
-    color: #ec7115;
-}
 
 .button{
     background-color: rgb(0,51,102);

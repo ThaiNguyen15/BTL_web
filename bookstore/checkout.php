@@ -39,6 +39,12 @@ if(isset($_SESSION['id'])){
 		VALUES(".$row['CustomerID'].", '".$row['BookID']
 		."', CURRENT_TIME, ".$row['Quantity'].", ".$row['TotalPrice'].", 'N')";
 		$conn->query($sql);
+
+		$quantity = $row['Quantity'];
+		$id = $row['BookID'];
+		$sql = "UPDATE book SET Amount = Amount - '$quantity' WHERE BookID='$id'";
+		$conn->query($sql);
+
 	}
 	$sql = "DELETE FROM cart";
 	$conn->query($sql);
@@ -47,6 +53,9 @@ if(isset($_SESSION['id'])){
 		FROM customer, book, `order`
 		WHERE `order`.`CustomerID` = customer.CustomerID AND `order`.`BookID` = book.BookID AND `order`.`Status` = 'N' AND `order`.`CustomerID` = ".$cID."";
 	$result = $conn->query($sql);
+
+	 
+	$result = $conn->query($sql);	
 	echo '<div class="container">';
 	echo '<blockquote>';
 ?>
