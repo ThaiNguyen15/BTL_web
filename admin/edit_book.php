@@ -12,18 +12,17 @@ $stmt->execute();
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if(isset($_POST['push'])){
+if(isset($_POST['submit'])){
 
     require_once "../bookstore/connectDB.php";
 
 
 
-    $sql = "UPDATE `book` SET `BookTitle`='$_POST[title]',`ISBN`='$_POST[isbn]',`Price`='$_POST[price]',`Author`='$_POST[author]',`Type`='$_POST[type]',`Image`='$_POST[image]' WHERE BookID = $book_id";
-    
+    $sql = "UPDATE `book` SET `BookTitle`='$_POST[title]',`ISBN`='$_POST[isbn]',`Price`='$_POST[price]' ,`Amount`='$_POST[amount]' ,`Author`='$_POST[author]',`Type`='$_POST[type]',`Image`='$_POST[image]' WHERE BookID = $book_id";
     $stmt = $pdo->prepare($sql);
     
     $stmt->execute();
-    // echo $stmt->rowCount() . " records UPDATED successfully";
+    //echo $stmt->rowCount() . " records UPDATED successfully";
     header("Location:./manage-book.php");
     
     /**
@@ -67,6 +66,9 @@ $pdo = NULL;
 <label for='price'>Book Price: </label>
 <input type='number' step ='0.01' name='price' id='price' value = '$result[Price]'>
 <br>
+<label for='type'>Book Type: </label>
+<input type='text' name='amount' id='amount' value = '$result[Amount]'>
+<br>
 <label for='image'>Book Image: </label>
 <input type='text ' name='image' id='image' value = '$result[Image]'>
 <br>
@@ -76,7 +78,7 @@ $pdo = NULL;
 
 ?>
 
-<button type='submit' name='push' class='btn-primary'>Edit</button>
+<button type='submit' name='submit' class='btn-primary'>Edit</button>
 
 </form>    
 </body>
