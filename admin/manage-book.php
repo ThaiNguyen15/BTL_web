@@ -23,6 +23,7 @@ $pdo = NULL;
                         <th>Title</th>
                         <th>Author</th>
                         <th>Type</th>
+                        <th>Amount</th>
                         <th>Price</th>
                         <th>Actions</th>
                     </tr>
@@ -36,6 +37,7 @@ $pdo = NULL;
                                 <td>$rs[BookTitle]</td>
                                 <td>$rs[Author]</td>
                                 <td>$rs[Type]</td>
+                                <td>$rs[Amount]</td>
                                 <td>$rs[Price]</td>
                                 <td>
                                     <a href='edit_book.php?bookid=$rs[BookID]' class='btn-secondary'>Edit Book</a> 

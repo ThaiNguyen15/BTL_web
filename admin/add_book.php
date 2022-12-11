@@ -33,7 +33,7 @@
         //upload img
         $filename = pathinfo($_FILES['image'], PATHINFO_FILENAME);
         copy($filename, 'image/'.$filename);
-
+        
         $pdo->exec("INSERT INTO `book`( `BookTitle`, `ISBN`, `Price`, `Author`, `Type`, `Image`) VALUES ('$_POST[title]','$_POST[isbn]','$_POST[price]','$_POST[author]','$_POST[type]','$filename')");
         header("Location:./manage-book.php");
         
