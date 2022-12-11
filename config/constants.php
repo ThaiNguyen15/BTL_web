@@ -12,7 +12,7 @@
 
 
         // Create Constants to Store Non Repeating Values
-        if (!defined('SITEURL')) define('SITEURL', 'http://localhost:8080/PHP-Bookstore-Website-Example/');
+        if (!defined('SITEURL')) define('SITEURL', 'http://localhost/BTL_web/');
         if (!defined('LOCALHOST')) define('LOCALHOST', 'localhost');
         if (!defined('DB_USERNAME')) define( 'DB_USERNAME', 'root' );
         if (!defined('DB_PASSWORD')) define( 'DB_PASSWORD', '');

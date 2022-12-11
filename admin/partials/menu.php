@@ -2,8 +2,6 @@
     include('../config/constants.php') ;
     include('login-check.php'); 
 ?>
-
-
 <html>
     <head>
         <title>Food Order Website - Home Page </title>
