@@ -8,7 +8,7 @@
         <br><br>
 
         <?php
-            $id=$_GET["UserID"];
+            $id=$_GET['id'];
 
             $sql = "SELECT * FROM users WHERE UserID=$id";
 
@@ -20,7 +20,7 @@
                 if($count == 1){
                     $row = mysqli_fetch_assoc($res);
 
-                    $username = $row['username'];
+                    $username = $row['UserName'];
                 }else{
                     header('Location:'.SITEURL.'admin/manage-user.php');
                 }
@@ -54,19 +54,19 @@
         $username = $_POST['username'];
 
         $sql = "UPDATE users SET
-        username ='$username'
-        WHERE id='$id'
+        UserName ='$username'
+        WHERE UserID='$id'
         ";
 
         $res = mysqli_query($conn, $sql);
 
         if($res == TRUE){
-            header("Location:".SITEURL.'admin/manage-user.php');
             $_SESSION['update'] = "<div class='success'>User Updated Successfully.</div>";
+            header("Location:".SITEURL.'admin/manage-user.php');        
             
-        }else{
-            header("Location:".SITEURL.'admin/manage-User.php');
+        }else{  
             $_SESSION['update'] = "<div class='error'>User Updated Fail.</div>";
+            header("Location:".SITEURL.'admin/manage-user.php');
             
         }
     }
