@@ -1,8 +1,5 @@
  <?php include('partials/menu.php') ?>
- <blockquote>
-	<img src="../bookstore/image/logo.png">
-	<input class="hi" style="float: right; margin: 2%;" type="button" name="cancel" value="Home" onClick="window.location='../bookstore/index.php';" />
-</blockquote>
+
         
         <!-- Menu Section ends -->
 

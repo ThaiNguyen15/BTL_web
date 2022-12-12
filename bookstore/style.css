@@ -29,6 +29,9 @@ header .hi{
 header .hi:hover{
     background-color: #ccc;
 }
+footer{
+    width:100%;
+}
 
 
 table {
@@ -104,4 +107,25 @@ textarea:focus {
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
+}
+
+.cart img{
+    width: 25%
+}
+.cart{
+    width: 30%;
+}
+.col{
+    display: flex;
+}
+/* Medium Devices, Desktops */ @media only screen and (max-width : 992px) {
+    .cart{
+        width: 50%;
+    }
+
+}
+/* Small Devices, Tablets */ @media only screen and (max-width : 768px) {
+    .cart{
+        width: 100%;
+    }
 }

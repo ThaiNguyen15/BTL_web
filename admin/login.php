@@ -1,8 +1,4 @@
 <?php include('../config/constants.php') ?>
-<blockquote>
-	<img src="../bookstore/image/logo.png">
-	<input class="hi" style="float: right; margin: 2%;" type="button" name="cancel" value="Home" onClick="window.location='../bookstore/index.php';" />
-</blockquote>
 <html>
     <head>
         <title>Login - Admin</title>
@@ -57,17 +53,19 @@
         $count = mysqli_num_rows($res);
 
         if($count == 1){
-            //Redirect to Home Page
-            header('Location:'.SITEURL.'admin/');
+            //header('Location:'.SITEURL.'admin/');
+            echo "<script>  window.location='manage-admin.php';</script>";
             //Login Successfully
             $_SESSION['login'] = "<div class='success text-center'>Login Successfully.</div>";
+             //Redirect to Home Page
+             //
             $_SESSION['user'] = $username; 
             
             
             
         }else{
             //Redirect to Home Page
-            header('Location:'.SITEURL.'admin/login.php');
+            echo "<script>  window.location='login.php';</script>";
             //User not available
             $_SESSION['login'] = "<div class='error text-center'>Username or password incorrect.</div>";
             
