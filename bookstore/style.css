@@ -129,3 +129,6 @@ textarea:focus {
         width: 100%;
     }
 }
+blockquote.header{
+    background-color: #212529;
+}

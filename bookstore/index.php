@@ -1,7 +1,9 @@
 <html>
 <meta http-equiv="Content-Type"'.' content="text/html; charset=utf8"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 
@@ -75,7 +77,7 @@ session_start();
 <?php
 if(isset($_SESSION['id'])){
 	echo '<header>';
-	echo '<blockquote>';
+	echo '<blockquote class="header">';
 	echo '<a href="index.php"><img src="image/logo.png"></a>';
 	echo '<form class="hf" action="cart.php"><input class="hi" type="submit" name="submitButton" value="Cart"></form>';
 	echo '<form class="hf" action="logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
@@ -86,7 +88,7 @@ if(isset($_SESSION['id'])){
 
 if(!isset($_SESSION['id'])){
 	echo '<header>';
-	echo '<blockquote>';
+	echo '<blockquote class="header">';
 	echo '<a href="index.php"><img src="image/logo.png"></a>';
 	echo '<form class="hf" action="cart.php"><input class="hi" type="submit" name="submitButton" value="Cart"></form>';
 	echo '<form class="hf" action="Register.php"><input class="hi" type="submit" name="submitButton" value="Register"></form>';
@@ -126,6 +128,6 @@ echo '<div class="row">';
 	echo '</div';
 	echo '</div';
 	echo '</blockquote>';
+	
+	include('footer.php');
 ?>
-</body>
-</html>
